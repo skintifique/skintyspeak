@@ -51,6 +51,9 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
       
 <script>
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
+  if !(speakingSkintySession) {
+  speakingSkintySession = "0";
+   }  
 let defaultSkintySession = document.getElementById("defaultSkintySession").value ;
 if (defaultSkintySession = "0") {
   speakingSkintySession = "0";
