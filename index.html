@@ -84,7 +84,7 @@ var x = setInterval(function() {
      } else if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
-    let newSpeakingSkintySession = speakingSkintySession + 1 ;
+    let newSpeakingSkintySession = Number(speakingSkintySession) + 1 ;
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
     location.reload();
   }
