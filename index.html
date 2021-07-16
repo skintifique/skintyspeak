@@ -54,6 +54,8 @@ let speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
 let defaultSkintySession = document.getElementById("defaultSkintySession").value ;
 if (defaultSkintySession = "0") {
   speakingSkintySession = "0";
+   } else {
+  speakingSkintySession = defaultSkintySession ;
    }
   
 document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
