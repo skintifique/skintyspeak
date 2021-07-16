@@ -14,10 +14,12 @@ p {
 <div id="skintyIntro">
   <center>
 <h1>Welcome to SkinTy's speaking avatar</h1>
-<p>
-This is a speaking version of SkinTy's, the digital assistant developed by Skintifique. THIS IS A DRAFT VERSION USED FOR DEVELOPMENT AND IT DISPLAYS WITH VERY LIMITED CAPABILITIES YET. For the latest version of the digital assistant, please use the ChatBot on Skintifique website.
+<p>This is a speaking version of SkinTy's, the digital assistant developed by Skintifique </p>
+    <p>You may ask SkinTy any question related to skin care and to Skintifique, in writing or through voice control.</p>
+<p>This is designed to provide you with a totally new experience interacting with a digital assistant combining virtual reality and artificial intelligence. Please be aware that many people love the experience, but others find it somewhat uncomfortable.</p>
+    <p>Also, please note that THIS IS A DRAFT VERSION USED FOR DEVELOPMENT AND IT DISPLAYS WITH VERY LIMITED CAPABILITIES YET. For the latest version of the digital assistant, please use the ChatBot on Skintifique website.</p>
 <br><br>
-You may ask SkinTy any question related to skin care and to Skintifique, in writing or through voice control.
+<p>This is a free test version of speaking SkinTy. Your session may last up to 10 minutes.</p>    
 <br><br>
   <em>To exit a dialog, say "EXIT" or "EX".
 <br>
@@ -44,6 +46,12 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <p id="demo"></p>
 <p id="startTime"></p>
 <p id="maxTime"></p>
+      <p id="speakingSkintySession"></p>
+      
+<script>
+let speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
+  document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
+      </script>
       
 <script>
 // Set the date we're counting down to
@@ -78,6 +86,7 @@ var x = setInterval(function() {
      } else if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
+    localStorage.setItem("speakingSkintySession", 1);
     location.reload();
   }
 }, 1000);
