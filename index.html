@@ -2,7 +2,13 @@
 <html>
 <head>
 <meta name="viewport" content="width-device-width, initial-scale=1">
-<link rel="stylesheet" href="https://skintifique.github.io/skintypage.css">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
 </head>
 <body>
 
@@ -36,6 +42,46 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <p id="nwsl_text"> or <a id="nwsl_url" href="url" target="_blank"><strong>subscribe to the Newsletter</strong></a> for news, insights and promotions.</p>
 <em><p id="ackn_text">DO NOT REMOVE NOR MODIFY THIS ELEMENT</p></em>
     <p>Enjoy!</p>
+      
+<p id="demo"></p>
+<p id="startTime"></p>
+<p id="maxTime"></p>
+      
+<script>
+// Set the date we're counting down to
+let startTime = Date.now() ;
+let maxTime = startTime + (0.2*60*1000) ;
+document.getElementById("startTime").innerHTML = startTime;
+document.getElementById("maxTime").innerHTML = maxTime;
+
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = maxTime - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    window.open("https://www.w3schools.com");
+  }
+}, 1000);
+</script>
+      
 </body>
 </html>
 
