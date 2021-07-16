@@ -51,9 +51,7 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <script>
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
   document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
-      </script>
-      
-<script>
+  
 // Set the date we're counting down to
 let startTime = Date.now() ;
 let maxTime = startTime + (0.2*60*1000) ;
@@ -86,7 +84,8 @@ var x = setInterval(function() {
      } else if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
-    localStorage.setItem("speakingSkintySession", 1);
+    let newSpeakingSkintySession = speakingSkintySession + 1 ;
+    localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
     location.reload();
   }
 }, 1000);
