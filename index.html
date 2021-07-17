@@ -42,7 +42,7 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <p id="startTime" name="startTime">startTime</p>
 <p id="maxTime" name="maxTime">maxTime</p>
       <p id="speakingSkintySession" name="speakingSkintySession">speakingSkintySession</p>
-      <input id="maxSkintySession" name="maxSkintySession" value="1" name="maxSkintySession">maxSkintySession</input>
+      <input id="maxSkintySession" name="maxSkintySession" value="2" name="maxSkintySession">maxSkintySession</input>
       <input id="resetSkintySession" name="resetSkintySession" value="y" name="resetSkintySession">resetSkintySession</input>
       
 <script>
@@ -53,7 +53,6 @@ let resetSkintySession = document.getElementById("resetSkintySession").value ;
 if (resetSkintySession === "y") {
   localStorage.removeItem("speakingSkintySession");
   speakingSkintySession = "0";
-  document.getElementById("resetSkintySession").value = "n" ;
   } else {
   speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
   }
@@ -109,9 +108,9 @@ var x = setInterval(function() {
     alert("this is an alert");
      } else if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
     let newSpeakingSkintySession = Number(speakingSkintySession) + 1 ;
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
+    document.getElementById("demo").innerHTML = "EXPIRED";
     document.getElementById("speakingSkintyIframe").src = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
      
   }
