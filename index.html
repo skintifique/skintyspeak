@@ -42,13 +42,18 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <p id="startTime"></p>
 <p id="maxTime"></p>
       <p id="speakingSkintySession"></p>
-      <input id="defaultSkintySession" value="1" label="defaultSkintySession"></input>
+      <input id="defaultSkintySession" value="0" label="defaultSkintySession"></input>
       
 <script>
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
   if !(speakingSkintySession) {
   speakingSkintySession = "0";
-   }  
+  document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
+   } else {
+document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
+      }
+ </script> 
+  
 let defaultSkintySession = document.getElementById("defaultSkintySession").value ;
 if (defaultSkintySession = "0") {
   speakingSkintySession = "0";
