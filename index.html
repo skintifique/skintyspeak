@@ -109,7 +109,8 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
     let newSpeakingSkintySession = Number(speakingSkintySession) + 1 ;
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
-    location.reload();
+    document.getElementById("speakingSkintyIframe").src = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
+     
   }
 }, 1000);
 </script>
