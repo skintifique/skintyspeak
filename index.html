@@ -42,8 +42,8 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <p id="startTime" name="startTime">startTime</p>
 <p id="maxTime" name="maxTime">maxTime</p>
       <p id="speakingSkintySession" name="speakingSkintySession">speakingSkintySession</p>
-      <input id="maxSkintySession" name="maxSkintySession" value="3" name="maxSkintySession">maxSkintySession</input>
-      <input id="resetSkintySession" name="resetSkintySession" value="y" name="resetSkintySession">resetSkintySession</input>
+      <input id="maxSkintySession" name="maxSkintySession" value="2" name="maxSkintySession">maxSkintySession</input>
+      <input id="resetSkintySession" name="resetSkintySession" value="n" name="resetSkintySession">resetSkintySession</input>
       
 <script>
 // identifies the number of Skinty sessions and sets to 0 if no session recorded yet
@@ -71,7 +71,7 @@ let nMaxSkintySession = Number(maxSkintySession) ;
 if (nSpeakingSkintySession < nMaxSkintySession) {
 urlForIframe = "https://creator.us.uneeq.io/try/57ae3416-f8f7-4fae-aec1-d5c34fa749cc"
  } else {
-urlForIframe = "https://www.skintifique.me" ;
+urlForIframe = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
  }
 document.getElementById("speakingSkintyIframe").src = urlForIframe;
   
