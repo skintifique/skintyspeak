@@ -53,6 +53,7 @@ let resetSkintySession = document.getElementById("resetSkintySession").value ;
 if (resetSkintySession === "y") {
   localStorage.removeItem("speakingSkintySession");
   speakingSkintySession = "0";
+  document.getElementById("resetSkintySession").value = "n" ;
   } else {
   speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
   }
