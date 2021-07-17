@@ -66,7 +66,9 @@ if (resetSkintySession === "y") {
 
 //if number of Skinty sessions is < maxSkintySession, then show SkinTy in iframe, otherwise show sk home page (TO BE REPLACED BY PAGE WITH INSTRUCTIONS ON HOW TO CONTINUE USING SKINTY)
 let urlForIframe ;
-if (Number(speakingSkintySession) < Number(maxSkintySession)) {
+let nSpeakingSkintySession = Number(speakingSkintySession) ;
+let nMaxSkintySession = Number(maxSkintySession) ; 
+if (nSpeakingSkintySession < nMaxSkintySession) {
 urlForIframe = "https://creator.us.uneeq.io/try/57ae3416-f8f7-4fae-aec1-d5c34fa749cc"
  } else {
 urlForIframe = "https://www.skintifique.me" ;
