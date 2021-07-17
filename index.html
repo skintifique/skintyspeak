@@ -42,7 +42,8 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <p id="startTime" name="startTime">startTime</p>
 <p id="maxTime" name="maxTime">maxTime</p>
       <p id="speakingSkintySession" name="speakingSkintySession">speakingSkintySession</p>
-      <input id="defaultSkintySession" name="defaultSkintySession" value="1" name="defaultSkintySession">defaultSkintySession</input>
+      <input id="maxSkintySession" name="maxSkintySession" value="2" name="maxSkintySession">maxSkintySession</input>
+      <input id="resetSkintySession" name="resetSkintySession" value="n" name="resetSkintySession">resetSkintySession</input>
       
 <script>
 // identifies the number of Skinty sessions and resets to 0 if defaultSkintySession is set to O
@@ -55,22 +56,22 @@ speakingSkintySession = "0" ;
 document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
       }
   
-let defaultSkintySession = document.getElementById("defaultSkintySession").value ;
-if (defaultSkintySession === "0") {
-  speakingSkintySession = "0";
-   }
+let maxSkintySession = document.getElementById("defaultSkintySession").value ;
+let resetSkintySession = document.getElementById("resetSkintySession").value ;
   
-document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
+//if resetSkintySession is set to no, then keep speakingSkintySession as is; if set to y, then reset speakingSkintySession to 0
+if (resetSkintySession === "y") {
+  speakingSkintySession = "0" ;
+   }
 
-//if number of Skinty sessions is 0, then show SkinTy in iframe, otherwise show sk home page (TO BE REPLACED BY PAGE WITH INSTRUCTIONS ON HOW TO CONTINUE USING SKINTY)
+//if number of Skinty sessions is < maxSkintySession, then show SkinTy in iframe, otherwise show sk home page (TO BE REPLACED BY PAGE WITH INSTRUCTIONS ON HOW TO CONTINUE USING SKINTY)
 let urlForIframe ;
-if (speakingSkintySession === "0") {
+if (speakingSkintySession < maxSkintySession) {
 urlForIframe = "https://creator.us.uneeq.io/try/57ae3416-f8f7-4fae-aec1-d5c34fa749cc"
  } else {
 urlForIframe = "https://www.skintifique.me" ;
  }
 document.getElementById("speakingSkintyIframe").src = urlForIframe;
-
   
 // Set the date we're counting down to
 let startTime = Date.now() ;
