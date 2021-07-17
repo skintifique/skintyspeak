@@ -75,8 +75,14 @@ urlForIframe = "https://creator.us.uneeq.io/try/57ae3416-f8f7-4fae-aec1-d5c34fa7
  } else {
 urlForIframe = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
  }
-document.getElementById("speakingSkintyIframe").src = urlForIframe;
+document.getElementById("speakingSkintyIframe").src = urlForIframe ;
   
+//deals with case when user users return to previous page
+let demo =  document.getElementById("demo").innerHTML;
+  if (demo = "EXPIRED") {
+  document.getElementById("speakingSkintyIframe").src = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
+    }
+    
 // Set the date we're counting down to
 let startTime = Date.now() ;
 let maxTime = startTime + (0.2*60*1000) ;
