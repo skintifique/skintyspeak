@@ -127,7 +127,7 @@ var x = setInterval(function() {
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
     document.getElementById("demo").innerHTML = "EXPIRED";
     document.getElementById("speakingSkintyIframe").src = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
-     
+   // consider using what is window.location.replace to prevent user from being able to go back to page displaying SkinTy iframe
   }
 }, 1000);
 </script>
