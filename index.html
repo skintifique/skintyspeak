@@ -12,7 +12,7 @@
   <center>
 <h1>Welcome to SkinTy's speaking avatar</h1>
 <p>This is a speaking version of SkinTy's, the digital assistant developed by Skintifique </p>
-<p>Please note that THIS IS A DRAFT VERSION USED FOR DEVELOPMENT AND IT DISPLAYS WITH VERY LIMITED CAPABILITIES. For the latest version of the digital assistant, please use the ChatBot on Skintifique website.</p>
+<p>Please note that THIS IS A DRAFT VERSION USED FOR DEVELOPMENT AND IT DISPLAYS WITH VERY LIMITED CAPABILITIES. For the latest version of the digital assistant, please use the chat on Skintifique website.</p>
 <br>
   <em>For instructions on how to best communicate with SkinTy, please look at the bottom of the page or follow this link: (coming soon).
 <br><br>
@@ -23,7 +23,7 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
   </center>
 </div>
 
-<p><iframe width="100%" height="500" src="https://creator.us.uneeq.io/try/57ae3416-f8f7-4fae-aec1-d5c34fa749cc" sandbox="allow-scripts allow-same-origin allow-modals allow-top-navigation allow-popups" allow="camera;microphone;"></iframe></p>
+<p><iframe id="speakingSkintyIframe" width="100%" height="500" src="" sandbox="allow-scripts allow-same-origin allow-modals allow-top-navigation allow-popups" allow="camera;microphone;"></iframe></p>
 
 <br>
   <div>
@@ -38,30 +38,39 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
 <br>
 <br>
     <h2><bold>For dev</bold></h2>
-<p id="demo"></p>
-<p id="startTime"></p>
-<p id="maxTime"></p>
-      <p id="speakingSkintySession"></p>
-      <input id="defaultSkintySession" value="0" label="defaultSkintySession"></input>
+<p id="demo" name="demo">demo</p>
+<p id="startTime" name="startTime">startTime</p>
+<p id="maxTime" name="maxTime">maxTime</p>
+      <p id="speakingSkintySession" name="speakingSkintySession">speakingSkintySession</p>
+      <input id="defaultSkintySession" name="defaultSkintySession" value="0" name="defaultSkintySession">defaultSkintySession</input>
       
 <script>
+// identifies the number of Skinty sessions and resets to 0 if defaultSkintySession is set to O
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ;
-  if !(speakingSkintySession) {
-  speakingSkintySession = "0";
+
+  if (speakingSkintySession) {
   document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
    } else {
+speakingSkintySession = "0" ;
 document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
       }
- </script> 
   
 let defaultSkintySession = document.getElementById("defaultSkintySession").value ;
-if (defaultSkintySession = "0") {
+if (defaultSkintySession === "0") {
   speakingSkintySession = "0";
-   } else {
-  speakingSkintySession = defaultSkintySession ;
    }
   
 document.getElementById("speakingSkintySession").innerHTML = speakingSkintySession ;
+
+//if number of Skinty sessions is 0, then show SkinTy in iframe, otherwise show sk home page (TO BE REPLACED BY PAGE WITH INSTRUCTIONS ON HOW TO CONTINUE USING SKINTY)
+let urlForIframe ;
+if (speakingSkintySession === "0") {
+urlForIframe = "https://creator.us.uneeq.io/try/57ae3416-f8f7-4fae-aec1-d5c34fa749cc"
+ } else {
+urlForIframe = "https://www.skintifique.me" ;
+ }
+document.getElementById("speakingSkintyIframe").src = urlForIframe;
+
   
 // Set the date we're counting down to
 let startTime = Date.now() ;
