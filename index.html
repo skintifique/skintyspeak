@@ -130,6 +130,7 @@ var x = setInterval(function() {
     sessionStorage.setItem("skintySession","EXPIRED") ;
     document.getElementById("speakingSkintyIframe").src = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
     window.history.replaceState("https://www.skintifique.me","Skintifique home","/en/home/");
+    location.reload();
    // consider using what is window.location.replace to prevent user from being able to go back to page displaying SkinTy iframe
   }
 }, 1000);
