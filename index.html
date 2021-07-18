@@ -64,8 +64,8 @@ function resetSkintySession() {
 <script>
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ; 
 let maxSkintySession = document.getElementById("maxSkintySession").value ;
-let demo = document.getElementById("demo").textContent ;
-  
+let skintySession = sessionStorage("skintySession") ;
+        
 // identifies the number of Skinty sessions and sets to 0 if no session recorded yet
 
   if (speakingSkintySession) {
@@ -80,7 +80,7 @@ let urlForIframe ;
 let nSpeakingSkintySession = Number(speakingSkintySession) ;
 let nMaxSkintySession = Number(maxSkintySession) ; 
 
-if (demo === "EXPIRED") {
+if (skintySession === "EXPIRED") {
    urlForIframe = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
    } else if (nSpeakingSkintySession < nMaxSkintySession) {
 urlForIframe = "https://creator.us.uneeq.io/try/57ae3416-f8f7-4fae-aec1-d5c34fa749cc"
@@ -124,6 +124,7 @@ var x = setInterval(function() {
     let newSpeakingSkintySession = Number(speakingSkintySession) + 1 ;
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
     document.getElementById("demo").innerHTML = "EXPIRED";
+    sessionStorage.setItem("skintySession","EXPIRED") ;
     document.getElementById("speakingSkintyIframe").src = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
    // consider using what is window.location.replace to prevent user from being able to go back to page displaying SkinTy iframe
   }
