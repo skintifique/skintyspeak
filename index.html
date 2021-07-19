@@ -88,8 +88,7 @@ document.getElementById("speakingSkintySession").innerHTML = speakingSkintySessi
 let urlForIframe ;
 let nSpeakingSkintySession = Number(speakingSkintySession) ;
 let nMaxSkintySession = Number(maxSkintySession) ; 
-let destinationUrl = "https://www.skintifique.me" ;
-
+        
 if (skintySession === "EXPIRED") {
    urlForIframe = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
    } else if (nSpeakingSkintySession < nMaxSkintySession) {
@@ -131,7 +130,7 @@ var x = setInterval(function() {
     alert("this is an alert");
      } else if (distance < 0) {
     clearInterval(x);
-     window.history.replaceState(destinationUrl,"Skintifique home","/en/home/");
+     window.history.replaceState("","","/skintyspeak/skintyspeakexpired.html");
     let newSpeakingSkintySession = Number(speakingSkintySession) + 1 ;
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
     document.getElementById("demo").innerHTML = "EXPIRED";
