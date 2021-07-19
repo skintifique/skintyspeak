@@ -75,6 +75,7 @@ function resetSessionSkintySession() {
 let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
         
 if (initialiseSkintySession === "1") {
+    document.getElementById("initialiseSkintySession").innerHTML = "SkintySession has been initialised" ;
     window.location.href = "http://www.skintifique.me";
     } else {
     document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
