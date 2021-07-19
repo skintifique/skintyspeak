@@ -70,19 +70,6 @@ function resetSessionSkintySession() {
         sessionStorage.removeItem("skintySession");
         }
 </script>     
-      
-<script>
-let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
-        
-if (initialiseSkintySession === "1") {
-    document.getElementById("initialiseSkintySession").innerHTML = "SkintySession has been initialised" ;
-    skintySpeak();      
-    } else {
-    document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
-    window.location.replace("http://www.w3schools.com");
-      location.reload();       
-    }
-</script>
         
 <script>
 function skintySpeak() {
@@ -158,6 +145,19 @@ var x = setInterval(function() {
   }
 }, 1000);
 }
+</script>
+        
+<script>
+let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
+        
+if (initialiseSkintySession === "1") {
+    document.getElementById("initialiseSkintySession").innerHTML = "SkintySession has been initialised" ;
+    skintySpeak();      
+    } else {
+    document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
+    window.location.replace("http://www.w3schools.com");
+      location.reload();       
+    }
 </script>
       
 </body>
