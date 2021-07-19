@@ -80,7 +80,7 @@ let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
 if (initialiseSkintySession) {
     document.getElementById("initialiseSkintySession").innerHTML = initialiseSkintySession ;
     } else {
-    window.location.replace("http://www.w3schools.com");
+    document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
     }
         
 // identifies the number of Skinty sessions and sets to 0 if no session recorded yet
