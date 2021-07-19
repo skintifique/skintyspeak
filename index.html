@@ -77,9 +77,11 @@ let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
 if (initialiseSkintySession === "1") {
     document.getElementById("initialiseSkintySession").innerHTML = "SkintySession has been initialised" ;
     window.location.href = "http://www.skintifique.me";
+        return false;
     } else {
     document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
     window.location.href = "http://www.w3schools.com";
+            return false;
     }
 
 function skintySpeak() {
