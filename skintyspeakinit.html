@@ -7,8 +7,14 @@
 </head>
 <body>
         
+        <button id="reset" onclick="resetInit()">reset init</button>        
+        
  <script>
         localStorage.setItem("initialiseSkintySession","1") ;
+        </script>
+        
+ <script>
+        localStorage.removeItem("initialiseSkintySession") ;
         </script>
 
     <iframe
