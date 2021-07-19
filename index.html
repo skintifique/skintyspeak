@@ -135,7 +135,8 @@ var x = setInterval(function() {
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
     document.getElementById("demo").innerHTML = "EXPIRED";
     sessionStorage.setItem("skintySession","EXPIRED") ;
-    window.location.replace("https://skintifique.github.io/skintyspeak/skintyspeakexpired.html") ;        
+    window.location.replace("https://skintifique.github.io/skintyspeak/skintyspeakexpired.html") ;     
+    location.reload();        
     //document.getElementById("speakingSkintyIframe").src = "https://skintifique.github.io/skintyspeak/skintyspeakexpired.html" ;
    
    // consider using what is window.location.replace to prevent user from being able to go back to page displaying SkinTy iframe
