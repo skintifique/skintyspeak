@@ -57,12 +57,18 @@ SkinTy is always learning. We welcome <a href="mailto:skinty@skintifique.com">fe
       <input id="maxSkintySession" name="maxSkintySession" value="8" name="maxSkintySession">maxSkintySession</input>
       <input id="resetSkintySession" name="resetSkintySession" value="n" name="resetSkintySession">resetSkintySession</input>
         
-        <button onclick="resetSkintySession()">Reset</button>
+        <button onclick="resetLocalSkintySession()">ResetLocal</button>
+        <button onclick="resetSessionSkintySession()">ResetSession</button>
 <script>
-function resetSkintySession() {
+function resetLocalSkintySession() {
         localStorage.removeItem("speakingSkintySession");
         }
-</script>        
+</script>  
+<script>
+function resetSessionSkintySession() {
+        sessionStorage.removeItem("skintySession");
+        }
+</script>     
       
 <script>
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ; 
