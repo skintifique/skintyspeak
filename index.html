@@ -75,14 +75,12 @@ function resetSessionSkintySession() {
 let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
         
 if (initialiseSkintySession === "1") {
-    skintySpeak() ;
+    window.location.href = "http://www.skintifique.me";
     } else {
     document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
     window.location.href = "http://www.w3schools.com";
     }
- </script> 
-        
-<script>
+
 function skintySpeak() {
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ; 
 let maxSkintySession = document.getElementById("maxSkintySession").value ;
