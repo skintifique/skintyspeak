@@ -72,16 +72,20 @@ function resetSessionSkintySession() {
 </script>     
       
 <script>
+let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
+        
+if (initialiseSkintySession === "1") {
+    skintySpeak() ;
+    } else {
+    document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
+    }
+       
+<script>
+function skintySpeak() {
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ; 
 let maxSkintySession = document.getElementById("maxSkintySession").value ;
 let skintySession = sessionStorage.getItem("skintySession") ;
 let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
-        
-if (initialiseSkintySession) {
-    document.getElementById("initialiseSkintySession").innerHTML = initialiseSkintySession ;
-    } else {
-    document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
-    }
         
 // identifies the number of Skinty sessions and sets to 0 if no session recorded yet
 
@@ -150,6 +154,7 @@ var x = setInterval(function() {
    // consider using what is window.location.replace to prevent user from being able to go back to page displaying SkinTy iframe
   }
 }, 1000);
+}
 </script>
       
 </body>
