@@ -130,7 +130,7 @@ var x = setInterval(function() {
     alert("this is an alert");
      } else if (distance < 0) {
     clearInterval(x);
-     window.history.replaceState("https://www.skintifique.me","Skintifique home","/en/home/");
+     window.history.replaceState({"https://www.skintifique.me"},"Skintifique home","/en/home/");
     let newSpeakingSkintySession = Number(speakingSkintySession) + 1 ;
     localStorage.setItem("speakingSkintySession", newSpeakingSkintySession);
     document.getElementById("demo").innerHTML = "EXPIRED";
