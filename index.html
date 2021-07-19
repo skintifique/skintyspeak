@@ -81,12 +81,13 @@ if (initialiseSkintySession === "1") {
     document.getElementById("initialiseSkintySession").innerHTML = "No initialiseSkintySession detected" ;
     window.location.replace = "http://www.w3schools.com";
     }
-
+</script>
+        
+<script>
 function skintySpeak() {
 let speakingSkintySession = localStorage.getItem("speakingSkintySession") ; 
 let maxSkintySession = document.getElementById("maxSkintySession").value ;
 let skintySession = sessionStorage.getItem("skintySession") ;
-let initialiseSkintySession = localStorage.getItem("initialiseSkintySession") ;
         
 // identifies the number of Skinty sessions and sets to 0 if no session recorded yet
 
